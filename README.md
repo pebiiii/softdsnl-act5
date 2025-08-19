@@ -130,6 +130,46 @@ python train_model.py
 
 ---
 
+## Understanding Model Training Results
+
+When you train your MNIST model, you’ll see metrics like **accuracy, loss, val_accuracy, and val_loss**.  
+Here’s what they mean:
+
+### Metrics Explained
+
+1. **Accuracy (`accuracy`)**  
+   - How many predictions the model got correct during training.  
+   - Example: If it sees 1000 images and predicts 920 correctly → **92% accuracy**.  
+   - Higher accuracy = better learning.
+
+2. **Loss (`loss`)**  
+   - A number showing **how wrong the model is**.  
+   - Calculated by a function (like *categorical crossentropy*) that penalizes wrong answers.  
+   - Lower loss = better performance.  
+   - Think of it as a “penalty score” → smaller is better.
+
+3. **Validation Accuracy (`val_accuracy`)**  
+   - Accuracy on **new images the model never saw before** (validation set).  
+   - Tells us if the model can generalize, not just memorize.  
+   - If training accuracy is 98% but validation accuracy is 85% → the model may be **overfitting**.
+
+4. **Validation Loss (`val_loss`)**  
+   - Loss on the validation set.  
+   - Important for checking generalization.  
+   - If training loss decreases but validation loss increases → also a sign of **overfitting**.
+
+---
+
+### In Simple Terms:
+- **Accuracy** = % correct on training data.  
+- **Loss** = how wrong the model is on training data.  
+- **Validation Accuracy** = % correct on unseen data.  
+- **Validation Loss** = how wrong the model is on unseen data.  
+
+Goal: **High accuracy + low loss** on both training and validation.
+
+---
+
 ## Step 2: Test with Your Own Handwritten Digits
 
 1. Write digits `0–9` on a white paper.  
